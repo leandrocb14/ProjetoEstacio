@@ -1,4 +1,4 @@
-package Models;import java.util.ArrayList;
+package Models;
 
 public class Mamifero extends Animal{
 	public Mamifero() {

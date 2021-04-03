@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Animal {
 	private int id;
-	private String nome;
 	private double tamanho;
 	private int tipo;
 	private String subTipo;
@@ -38,13 +37,7 @@ public class Animal {
 	public void setSubTipo(String subTipo) {
 		this.subTipo = subTipo;
 	}
-
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+	
 	public double getTamanho() {
 		return tamanho;
 	}

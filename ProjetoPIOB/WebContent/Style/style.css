@@ -1,0 +1,25 @@
+h1 {
+	color: #0D6EFD;
+	text-align: center;
+}
+
+.form-group{
+	color: #0D6EFD;
+}
+
+.input-style::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #0D6EFD;
+  opacity: 1; /* Firefox */
+}
+
+.input-style:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #0D6EFD;
+}
+
+.input-style::-ms-input-placeholder { /* Microsoft Edge */
+  color: #0D6EFD;
+}
+
+.input-style {
+	color: 0D6EFD;
+}

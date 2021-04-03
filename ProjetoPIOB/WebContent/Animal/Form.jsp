@@ -25,8 +25,8 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 <body>
 	<div class="container">
 		<h1>CADASTRAR ANIMAIS</h1>
-		<form class="form-horizontal">
-			<div class="form-group">
+		<form class="form-horizontal" id="form">
+			<div id="container-id" class="form-group">
 				<label class="col-sm-2 control-label">Id</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control input-style" id="id"
@@ -41,9 +41,9 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label">subTipo</label>
+				<label class="col-sm-2 control-label">SubTipo</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control input-style" id="subTipo"
+					<input type="text" class="form-control input-style" id="SubTipo"
 						placeholder="Cachorro">
 				</div>
 			</div>
@@ -64,7 +64,7 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 			</div>
 		</form>
 		<br>
-		<button type="button" class="btn btn-outline-primary">Cadastrar</button>
+		<button type="submit" id="btn-submit" class="btn btn-outline-primary" submit="form">Cadastrar</button>
 	</div>
 
 	<script
@@ -80,12 +80,11 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 		integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
 		crossorigin="anonymous"></script>
 	<script type="text/javascript">
-		var action = "<%=animal.getAction()%>"
+		var action = "<%=animal.getAction()%>";
 		var constAction = {
 				Create: '<%=ConstantesOperacoes.Criacao%>',
 				Update: '<%=ConstantesOperacoes.Alteracao%>',
-				Delete: '<%=ConstantesOperacoes.Delete%>
-		'
+				Delete: '<%=ConstantesOperacoes.Delete%>'
 		};
 	</script>
 	<script type="text/javascript"

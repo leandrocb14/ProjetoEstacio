@@ -1,6 +1,6 @@
-package DAO;
+package com.pos.pioo.dispatcher;
 
-import Models.Animal;
+import com.pos.pioo.models.Animal;
 
 public interface IDispatcherAnimal extends IBasicCrud<Animal> {
 	

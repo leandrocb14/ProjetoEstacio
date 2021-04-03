@@ -1,4 +1,4 @@
-package DAO;
+package com.pos.pioo.factory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

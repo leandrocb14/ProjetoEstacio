@@ -1,4 +1,4 @@
-package Models;
+package com.pos.pioo.models;
 
 public class Cachorro extends Mamifero {
 	public Cachorro() {

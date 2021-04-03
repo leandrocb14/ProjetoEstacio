@@ -1,4 +1,4 @@
-package Models;
+package com.pos.pioo.models;
 
 import java.util.ArrayList;
 import java.util.List;

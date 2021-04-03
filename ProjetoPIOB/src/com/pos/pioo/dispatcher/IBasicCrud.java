@@ -1,4 +1,4 @@
-package DAO;
+package com.pos.pioo.dispatcher;
 
 import java.sql.SQLException;
 import java.util.List;

@@ -1,4 +1,4 @@
-package DAO;
+package com.pos.pioo.dispatcher;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,7 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Models.Animal;
+import com.pos.pioo.factory.ConnectionDAO;
+import com.pos.pioo.models.Animal;
 
 public class DispatcherAnimal extends ConnectionDAO implements IDispatcherAnimal {
 

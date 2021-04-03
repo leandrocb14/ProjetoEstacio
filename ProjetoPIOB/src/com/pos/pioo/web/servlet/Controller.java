@@ -24,7 +24,6 @@ public class Controller extends HttpServlet {
 		Command comando = null;
 
 		try {
-			System.out.println("command.navigation." + request.getParameter("command"));
 			comando = (Command) Class.forName("com.pos.pioo.web.command.navigation." + request.getParameter("command")).newInstance();
 		} catch (InstantiationException e) {
 			e.printStackTrace();

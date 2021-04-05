@@ -14,11 +14,13 @@ function CarregaEventos() {
 function CarregaEventosCreate() {
 	$('#container-id').hide();
 	$('#btn-submit').text('Cadastrar')
+	$('#titulo-page').text('CADASTRAR ANIMAL');
 }
 
 function CarregaEventosUpdate() {
 	$('#id').attr('disabled', 'true');
-	$('#btn-submit').text('Alterar')
+	$('#btn-submit').text('Alterar');
+	$('#titulo-page').text('ALTERAR ANIMAL');
 }
 
 function CarregaEventosDelete() {
@@ -27,5 +29,6 @@ function CarregaEventosDelete() {
 	$('#SubTipo').attr('disabled', 'true');
 	$('#Tamanho').attr('disabled', 'true');
 	$('#Alimentacoes').attr('disabled', 'true');
-	$('#btn-submit').text('Deletar')
+	$('#btn-submit').text('Deletar');
+	$('#titulo-page').text('DELETAR ANIMAL');
 }

@@ -7,8 +7,9 @@ import java.sql.SQLException;
 public class ConnectionDAO {
 
 	private Connection con;
-	public ConnectionDAO() throws SQLException {
-		con = DriverManager.getConnection("jdbc:mysql://localhost/test?" +
+	public ConnectionDAO() throws SQLException, ClassNotFoundException {
+		Class.forName("com.mysql.jdbc.Driver");
+		con = DriverManager.getConnection("jdbc:mysql://localhost/projetoestacio?" +
 			                                   "user=root&password=@Leandro123");
 	}
 	public Connection getCon() {

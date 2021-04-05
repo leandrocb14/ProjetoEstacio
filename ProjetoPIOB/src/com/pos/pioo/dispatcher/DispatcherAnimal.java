@@ -11,19 +11,20 @@ import com.pos.pioo.models.Animal;
 
 public class DispatcherAnimal extends ConnectionDAO implements IDispatcherAnimal {
 
-	public DispatcherAnimal() throws SQLException {
+
+	public DispatcherAnimal() throws SQLException, ClassNotFoundException {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void Create(Animal model) throws SQLException {
-		String sql = "INSERT INTO Animal(nome,tamanho,tipoanimal,substipo)" + " VALUES(?,?,?,?)";
+		String sql = "INSERT INTO Animal(tamanho,tipoanimal,substipo)" + " VALUES(?,?,?)";
 		var con = getCon();
 		PreparedStatement pstm = con.prepareStatement(sql);
-		pstm.setString(1, model.getNome());
-		pstm.setDouble(2, model.getTamanho());
-		pstm.setInt(3, model.getTipo());
-		pstm.setString(4, model.getSubTipo());
+		pstm.setDouble(1, model.getTamanho());
+		pstm.setInt(2, model.getTipo());
+		pstm.setString(3, model.getSubTipo());
 		pstm.execute();
 		pstm.close();
 		con.close();
@@ -31,14 +32,13 @@ public class DispatcherAnimal extends ConnectionDAO implements IDispatcherAnimal
 
 	@Override
 	public void Update(Animal model) throws SQLException {
-		String sql = "UPDATE Animal SET Nome = ?, Tamanho = ?, TipoAnimal = ?, Subtipo = ? WHERE Id = ?";
+		String sql = "UPDATE Animal SET Tamanho = ?, TipoAnimal = ?, Subtipo = ? WHERE Id = ?";
 		var con = getCon();
 		PreparedStatement pstm = con.prepareStatement(sql);
-		pstm.setString(1, model.getNome());
-		pstm.setDouble(2, model.getTamanho());
-		pstm.setInt(3, model.getTipo());
-		pstm.setString(4, model.getSubTipo());
-		pstm.setInt(5, model.getId());
+		pstm.setDouble(1, model.getTamanho());
+		pstm.setInt(2, model.getTipo());
+		pstm.setString(3, model.getSubTipo());
+		pstm.setInt(4, model.getId());
 		pstm.execute();
 		pstm.close();
 		con.close();

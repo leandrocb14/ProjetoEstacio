@@ -1,24 +1,20 @@
 package com.pos.pioo.models;
 
+import java.util.List;
+
 public class AnimalViewModel extends ViewModel {
 	private int id;	
-	private String nome;
 	private double tamanho;
 	private int tipo;
 	private String subTipo;
 	private String nomeAlimentacoes;
+	private List<TipoAnimal> tiposAnimais;
 	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 	public double getTamanho() {
 		return tamanho;
@@ -43,5 +39,11 @@ public class AnimalViewModel extends ViewModel {
 	}
 	public void setNomeAlimentacoes(String nomeAlimentacoes) {
 		this.nomeAlimentacoes = nomeAlimentacoes;
+	}
+	public List<TipoAnimal> getTiposAnimais() {
+		return tiposAnimais;
+	}
+	public void setTiposAnimais(List<TipoAnimal> tiposAnimais) {
+		this.tiposAnimais = tiposAnimais;
 	}
 }

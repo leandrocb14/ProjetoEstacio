@@ -19,7 +19,7 @@ public class DispatcherAnimal extends ConnectionDAO implements IDispatcherAnimal
 
 	@Override
 	public void Create(Animal model) throws SQLException {
-		String sql = "INSERT INTO Animal(tamanho,tipoanimal,substipo)" + " VALUES(?,?,?)";
+		String sql = "INSERT INTO Animal(tamanho,tipoanimal,subtipo)" + " VALUES(?,?,?)";
 		var con = getCon();
 		PreparedStatement pstm = con.prepareStatement(sql);
 		pstm.setDouble(1, model.getTamanho());

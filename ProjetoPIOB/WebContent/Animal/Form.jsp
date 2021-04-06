@@ -25,18 +25,18 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 <body>
 	<div class="container">
 		<h1 id="titulo-page">CADASTRAR ANIMAIS</h1>
-		<form class="form-horizontal" id="form">
+		<form class="form-horizontal" id="formAnimal" method="post">
 			<div id="container-id" class="form-group">
 				<label class="col-sm-2 control-label">Id</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control input-style" id="id"
+					<input type="text" class="form-control input-style" id="id" name="id"
 						placeholder="Id">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Tipo</label>
 				<div class="col-sm-10">
-					<select name="Tipo" id="Tipo">
+					<select name="tipo" id="tipo">
 						<%
 						for (int i = 0; i < animal.getTiposAnimais().size(); i++) {
 						%>
@@ -51,14 +51,14 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 				<label class="col-sm-2 control-label">SubTipo</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control input-style" id="SubTipo"
-						placeholder="Cachorro">
+						placeholder="Cachorro" name="subTipo">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Tamanho</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control input-style" id="Tamanho"
-						placeholder="Tamanho">
+						placeholder="Tamanho" name="tamanho">
 				</div>
 			</div>
 			<div class="form-group">
@@ -66,13 +66,14 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 					(Separados por ;)</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control input-style"
-						id="Alimentacoes" placeholder="Alimentacoes">
+						id="Alimentacoes" placeholder="Alimentacoes" name="alimentacoes">
 				</div>
 			</div>
+			<input type="submit" value="Cadastrar"/>
 		</form>
 		<br>
 		<button type="submit" id="btn-submit" class="btn btn-outline-primary"
-			submit="form">Cadastrar</button>
+			submit="formAnimal" value="Submit">Cadastrar</button>
 	</div>
 
 	<script

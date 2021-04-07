@@ -13,25 +13,25 @@ function CarregaEventos() {
 
 function CarregaEventosCreate() {
 	$('#container-id').hide();
-	$('#btn-submit').text('Cadastrar')
+	$('#btnSumit').attr('value', 'Cadastrar')
 	$('#titulo-page').text('CADASTRAR ANIMAL');
 	$('#formAnimal').attr('action', '/ProjetoPIOB/Controller?command=PostCriarAnimal');
 }
 
 function CarregaEventosUpdate() {
-	$('#id').attr('disabled', 'true');
-	$('#btn-submit').text('Alterar');
+	$('#idAnimal').attr('readonly', 'true');
+	$('#btnSumit').attr('value', 'Alterar');
 	$('#titulo-page').text('ALTERAR ANIMAL');
 	$('#formAnimal').attr('action', '/ProjetoPIOB/Controller?command=PostAlterarAnimal');
 }
 
 function CarregaEventosDelete() {
-	$('#id').attr('disabled', 'true');
-	$('#Tipo').attr('disabled', 'true');
-	$('#SubTipo').attr('disabled', 'true');
-	$('#Tamanho').attr('disabled', 'true');
-	$('#Alimentacoes').attr('disabled', 'true');
-	$('#btn-submit').text('Deletar');
+	$('#idAnimal').attr('readonly', 'true');
+	$('#tipo').attr('disabled', 'true');
+	$('#subTipo').attr('disabled', 'true');
+	$('#tamanho').attr('disabled', 'true');
+	$('#alimentacoes').attr('disabled', 'true');
+	$('#btnSumit').attr('value', 'Deletar');
 	$('#titulo-page').text('DELETAR ANIMAL');
 	$('#formAnimal').attr('action', '/ProjetoPIOB/Controller?command=PostDeletarAnimal');
 }

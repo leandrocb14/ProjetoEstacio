@@ -1,8 +1,12 @@
 package com.pos.pioo.web.adapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.pos.pioo.models.Alimentacao;
 import com.pos.pioo.models.Animal;
-import com.pos.pioo.models.AnimalViewModel;
+import com.pos.pioo.web.viewmodels.AnimalViewModel;
+import com.pos.pioo.web.viewmodels.ListarAnimalViewModel;
 
 public class AnimalAdapter {
 	public static AnimalViewModel ConvertAnimalDspToViewModel(Animal animal) {
@@ -46,5 +50,25 @@ public class AnimalAdapter {
 			}
 		}
 		return animal;
+	}
+
+	public static ListarAnimalViewModel ConvertAnimaisDspToListarAnimalViewModel(List<Animal> animais) {
+		ListarAnimalViewModel viewModel = null;
+		if (animais != null && animais.size() > 0) {
+			viewModel = new ListarAnimalViewModel();
+			List<com.pos.pioo.web.viewmodels.Animal> listAnimais = new ArrayList<com.pos.pioo.web.viewmodels.Animal>();
+			for (Animal animal : animais) {
+				var animalWeb = new com.pos.pioo.web.viewmodels.Animal();
+				animalWeb.setId(animal.getId());
+				animalWeb.setSubTipo(animal.getSubTipo());
+				animalWeb.setTamanho(animal.getTamanho());
+				if (animal.getTipoAnimal() != null)
+					animalWeb.setTipo(animal.getTipoAnimal().getNome());
+
+				listAnimais.add(animalWeb);
+			}
+			viewModel.setAnimais(listAnimais);
+		}
+		return viewModel;
 	}
 }

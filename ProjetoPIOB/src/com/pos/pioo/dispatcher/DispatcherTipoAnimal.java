@@ -17,7 +17,7 @@ public class DispatcherTipoAnimal extends ConnectionDAO implements IDispatcherTi
 	}
 
 	@Override
-	public void Create(TipoAnimal model) throws SQLException {
+	public long Create(TipoAnimal model) throws SQLException {
 		String sql = "INSERT INTO TipoAnimal(nome)" + " VALUES(?)";
 		var con = getCon();
 		PreparedStatement pstm = con.prepareStatement(sql);
@@ -25,6 +25,7 @@ public class DispatcherTipoAnimal extends ConnectionDAO implements IDispatcherTi
 		pstm.execute();
 		pstm.close();
 		con.close();
+		return pstm.getGeneratedKeys().getLong(1);
 	}
 
 	@Override

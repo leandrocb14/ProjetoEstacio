@@ -1,4 +1,4 @@
-<%@ page import="com.pos.pioo.models.AnimalViewModel"%>
+<%@ page import="com.pos.pioo.web.viewmodels.AnimalViewModel"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
 <%@ page import="com.pos.pioo.infra.ConstantesOperacoes"%>
@@ -29,8 +29,7 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 			<div id="container-id" class="form-group">
 				<label class="col-sm-2 control-label">Id</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control input-style" id="id" name="id"
-						placeholder="Id">
+					<input type="text" name="id" class="form-control input-style" id="idAnimal" placeholder="Id" value="<%=animal.getId()%>">
 				</div>
 			</div>
 			<div class="form-group">
@@ -40,7 +39,18 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 						<%
 						for (int i = 0; i < animal.getTiposAnimais().size(); i++) {
 						%>
+						<%
+						if (animal.getTiposAnimais().get(i).getId() == animal.getTipo()) {
+						%>
+						<option value="<%=animal.getTiposAnimais().get(i).getId()%>"
+							selected><%=animal.getTiposAnimais().get(i).getNome()%></option>
+						<%
+						} else {
+						%>
 						<option value="<%=animal.getTiposAnimais().get(i).getId()%>"><%=animal.getTiposAnimais().get(i).getNome()%></option>
+						<%
+						}
+						%>
 						<%
 						}
 						%>
@@ -50,15 +60,17 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 			<div class="form-group">
 				<label class="col-sm-2 control-label">SubTipo</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control input-style" id="SubTipo"
-						placeholder="Cachorro" name="subTipo">
+					<input type="text" class="form-control input-style" id="subTipo"
+						placeholder="Cachorro" name="subTipo"
+						value="<%=animal.getSubTipo() != null && !animal.getSubTipo().isEmpty() ? animal.getSubTipo() : ""%>">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Tamanho</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control input-style" id="Tamanho"
-						placeholder="Tamanho" name="tamanho">
+					<input type="text" class="form-control input-style" id="tamanho"
+						placeholder="Tamanho" name="tamanho"
+						value="<%=animal.getTamanho()%>">
 				</div>
 			</div>
 			<div class="form-group">
@@ -66,14 +78,12 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 					(Separados por ;)</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control input-style"
-						id="Alimentacoes" placeholder="Alimentacoes" name="alimentacoes">
+						id="alimentacoes" placeholder="Alimentacoes" name="alimentacoes">
 				</div>
 			</div>
-			<input type="submit" value="Cadastrar"/>
+			<input type="submit" value="Cadastrar" id="btnSumit" />
 		</form>
 		<br>
-		<button type="submit" id="btn-submit" class="btn btn-outline-primary"
-			submit="formAnimal" value="Submit">Cadastrar</button>
 	</div>
 
 	<script

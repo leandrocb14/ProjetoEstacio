@@ -17,7 +17,7 @@ public class CriarAnimal implements Command {
 			AnimalViewModel animalViewModel = new AnimalViewModel();
 			BoTipoAnimal boTipoAnimal = new BoTipoAnimal();
 			var lista = boTipoAnimal.ListaTiposAnimais();
-			animalViewModel.getAnimal().setTiposAnimais(lista);
+			animalViewModel.setTiposAnimais(lista);
 			animalViewModel.setAction(ConstantesOperacoes.Criacao);
 			request.setAttribute("animalViewModel", animalViewModel);
 			requestDispatcher.forward(request, response);

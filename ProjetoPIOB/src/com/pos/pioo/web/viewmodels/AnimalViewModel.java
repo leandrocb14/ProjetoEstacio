@@ -3,15 +3,23 @@ package com.pos.pioo.web.viewmodels;
 import java.util.List;
 
 import com.pos.pioo.models.TipoAnimal;
-import com.pos.pioo.models.ViewModel;
 
-public class AnimalViewModel extends ViewModel {
+public class AnimalViewModel {
 	private int id;
 	private double tamanho;
 	private int tipo;
 	private String subTipo;
 	private String nomeAlimentacoes;
 	private List<TipoAnimal> tiposAnimais;
+	private String action;
+
+	public String getAction() {
+		return action;
+	}
+
+	public void setAction(String action) {
+		this.action = action;
+	}
 
 	public int getId() {
 		return id;

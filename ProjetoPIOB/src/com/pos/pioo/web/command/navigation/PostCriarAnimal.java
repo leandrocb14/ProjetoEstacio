@@ -25,7 +25,7 @@ public class PostCriarAnimal implements Command {
 			var animal = AnimalAdapter.ConvertAnimalViewModelToAnimalDsp(animalViewModel);
 			BoAnimal boAnimal = new BoAnimal();
 			boAnimal.CriarAnimal(animal);
-			response.sendRedirect("controller?command=CriarAnimal");
+			response.sendRedirect("/ProjetoPIOB/Controller?command=ListarAnimal");
 		} catch (ClassNotFoundException | SQLException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

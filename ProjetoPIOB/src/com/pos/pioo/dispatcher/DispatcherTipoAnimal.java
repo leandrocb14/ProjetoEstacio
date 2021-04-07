@@ -23,9 +23,13 @@ public class DispatcherTipoAnimal extends ConnectionDAO implements IDispatcherTi
 		PreparedStatement pstm = con.prepareStatement(sql);
 		pstm.setString(1, model.getNome());
 		pstm.execute();
+		long id = 0;
+		ResultSet rs = pstm.getGeneratedKeys();
+		if(rs.next())
+			id = rs.getLong(1);
 		pstm.close();
 		con.close();
-		return pstm.getGeneratedKeys().getLong(1);
+		return id;
 	}
 
 	@Override

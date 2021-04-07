@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.pos.pioo.bll.BoAnimal;
+import com.pos.pioo.web.adapter.AnimalAdapter;
 import com.pos.pioo.web.command.Command;
+import com.pos.pioo.web.viewmodels.ListarAnimalViewModel;
 
 public class ListarAnimal implements Command {
 
@@ -18,9 +20,11 @@ public class ListarAnimal implements Command {
 		// TODO Auto-generated method stub
 		try {
 			BoAnimal boAnimal = new BoAnimal();
+			
 			var animais = boAnimal.ListarTodosAnimais();
+			ListarAnimalViewModel viewModel = AnimalAdapter.ConvertAnimaisDspToListarAnimalViewModel(animais);
 			var requestDispatcher = request.getRequestDispatcher("/Animal/ListarAnimais.jsp");
-			request.setAttribute("animais", animais);
+			request.setAttribute("viewModel", viewModel);
 			requestDispatcher.forward(request, response);
 		} catch (SQLException | ServletException | IOException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block

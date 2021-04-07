@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.pos.pioo.bll.BoAnimal;
+import com.pos.pioo.bll.BoTipoAnimal;
 import com.pos.pioo.dispatcher.DispatcherAnimal;
 import com.pos.pioo.dispatcher.IDispatcherAnimal;
 import com.pos.pioo.infra.ConstantesOperacoes;
@@ -21,8 +22,10 @@ public class AlterarAnimal implements Command {
 			var requestDispatcher = request.getRequestDispatcher("/Animal/Form.jsp");
 			BoAnimal boAnimal = new BoAnimal();
 			var animal = boAnimal.BuscarAnimal(id);
-			AnimalViewModel animalViewModel = new AnimalViewModel();
-			animalViewModel.setAnimal(AnimalAdapter.ConvertAnimalDspToAnimalModel(animal));;
+			AnimalViewModel animalViewModel = AnimalAdapter.ConvertAnimalDspToViewModel(animal);
+			BoTipoAnimal boTipoAnimal = new BoTipoAnimal();
+			var lista = boTipoAnimal.ListaTiposAnimais();
+			animalViewModel.setTiposAnimais(lista);
 			animalViewModel.setAction(ConstantesOperacoes.Alteracao);
 			request.setAttribute("animalViewModel", animalViewModel);
 			requestDispatcher.forward(request, response);

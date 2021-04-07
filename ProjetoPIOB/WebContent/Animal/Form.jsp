@@ -33,9 +33,9 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Tipo</label>
+				<label class="col-sm-2 control-label">Classe</label>
 				<div class="col-sm-10">
-					<select name="tipo" id="tipo">
+					<select class="form-select select-style" name="tipo" id="tipo">
 						<%
 						for (int i = 0; i < animal.getTiposAnimais().size(); i++) {
 						%>
@@ -58,7 +58,7 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label">SubTipo</label>
+				<label class="col-sm-2 control-label">Nome Comum</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control input-style" id="subTipo"
 						placeholder="Cachorro" name="subTipo"
@@ -78,10 +78,11 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 					(Separados por ;)</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control input-style"
-						id="alimentacoes" placeholder="Alimentacoes" name="alimentacoes">
+						id="alimentacoes" placeholder="Alimentacoes" name="alimentacoes"> <br>
+			<input type="submit" value="Cadastrar" id="btnSumit" class="form-control input-style"/> <br>
+					<input href="/ProjetoPIOB/Controller?command=ListarAnimal" type="submit" class="form-control input-style" value="Listar Animais">
 				</div>
 			</div>
-			<input type="submit" value="Cadastrar" id="btnSumit" />
 		</form>
 		<br>
 	</div>

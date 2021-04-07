@@ -8,6 +8,7 @@ public class Animal {
 	private double tamanho;
 	private int tipo;
 	private String subTipo;
+	private TipoAnimal tipoAnimal;
 	private List<Alimentacao> alimentacoes;
 	
 	public Animal() {
@@ -49,5 +50,13 @@ public class Animal {
 	}
 	public void setAlimentacao(Alimentacao alimentacao) {
 		this.alimentacoes.add(alimentacao);
+	}
+
+	public TipoAnimal getTipoAnimal() {
+		return tipoAnimal;
+	}
+
+	public void setTipoAnimal(TipoAnimal tipoAnimal) {
+		this.tipoAnimal = tipoAnimal;
 	}
 }

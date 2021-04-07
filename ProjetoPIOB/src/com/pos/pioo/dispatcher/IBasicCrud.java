@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface IBasicCrud<T> {
-	void Create(T model) throws SQLException;
+	long Create(T model) throws SQLException;
 
 	void Update(T model) throws SQLException;
 

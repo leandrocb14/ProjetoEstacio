@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.pos.pioo.bll.BoTipoAnimal;
 import com.pos.pioo.infra.ConstantesOperacoes;
-import com.pos.pioo.models.AnimalViewModel;
 import com.pos.pioo.web.command.Command;
+import com.pos.pioo.web.viewmodels.AnimalViewModel;
 
 public class CriarAnimal implements Command {
 

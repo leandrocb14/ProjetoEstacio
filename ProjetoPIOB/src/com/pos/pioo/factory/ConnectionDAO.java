@@ -10,7 +10,7 @@ public class ConnectionDAO {
 	public ConnectionDAO() throws SQLException, ClassNotFoundException {
 		Class.forName("com.mysql.jdbc.Driver");
 		con = DriverManager.getConnection("jdbc:mysql://localhost/projetoestacio?" +
-			                                   "user=root&password=@Leandro123");
+			                                   "user=root&password=123456");
 	}
 	public Connection getCon() {
 		return con;

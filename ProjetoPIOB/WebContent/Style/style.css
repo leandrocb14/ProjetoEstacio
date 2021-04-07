@@ -3,6 +3,17 @@ h1 {
 	text-align: center;
 }
 
+.a-table {
+	text-decoration: none;
+	color: black;
+}
+
+.a-form {
+}
+
+.select-style {
+	color: #0D6EFD;
+}
 .form-group{
 	color: #0D6EFD;
 }
@@ -23,3 +34,21 @@ h1 {
 .input-style {
 	color: #0D6EFD;
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+

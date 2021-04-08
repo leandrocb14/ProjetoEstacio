@@ -31,7 +31,19 @@ public class Controller extends HttpServlet {
 		try {
 			var stringCommand = request.getParameter("command");
 			var usuarioEstaLogado = request.getSession().getAttribute(ConstantesSession.getUsuarioLogado()) != null;
-			comando = (Command) Class.forName("com.pos.pioo.web.command.navigation." + TratarFiltroCommand(stringCommand, usuarioEstaLogado)).newInstance();
+			var commandFiltrado = TratarFiltroCommand(stringCommand, usuarioEstaLogado);
+			if (!stringCommand.equals(commandFiltrado)) {
+				if (usuarioEstaLogado)
+					response.sendRedirect("/ProjetoPIOB/Controller?command=ListarAnimal");
+				else
+					response.sendRedirect("/ProjetoPIOB/Controller?command=Login");
+
+			} else {
+				comando = (Command) Class.forName("com.pos.pioo.web.command.navigation." + commandFiltrado)
+						.newInstance();
+				comando.execute(request, response);
+			}
+
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
@@ -39,7 +51,6 @@ public class Controller extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		comando.execute(request, response);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -53,8 +64,11 @@ public class Controller extends HttpServlet {
 	}
 
 	private String TratarFiltroCommand(String pCommand, boolean usuarioAutenticado) {
-		if (!CommandAllowAnonymous(pCommand) && !usuarioAutenticado)
+		var isAnonymous = CommandAllowAnonymous(pCommand);
+		if (!isAnonymous && !usuarioAutenticado)
 			return ConstantesActions.getCommandLogin();
+		else if (isAnonymous && usuarioAutenticado)
+			return ConstantesActions.getCommandListarAnimal();
 
 		return pCommand;
 	}

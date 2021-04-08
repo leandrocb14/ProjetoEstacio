@@ -26,7 +26,7 @@ public class AlterarAnimal implements Command {
 			BoTipoAnimal boTipoAnimal = new BoTipoAnimal();
 			var lista = boTipoAnimal.ListaTiposAnimais();
 			animalViewModel.setTiposAnimais(lista);
-			animalViewModel.setAction(ConstantesOperacoes.Alteracao);
+			animalViewModel.setAction(ConstantesOperacoes.getAlteracao());
 			request.setAttribute("animalViewModel", animalViewModel);
 			requestDispatcher.forward(request, response);
 		} catch (Exception e) {

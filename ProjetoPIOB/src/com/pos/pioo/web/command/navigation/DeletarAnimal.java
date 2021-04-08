@@ -26,7 +26,7 @@ public class DeletarAnimal implements Command {
 			BoTipoAnimal boTipoAnimal = new BoTipoAnimal();
 			var lista = boTipoAnimal.ListaTiposAnimais();
 			animalViewModel.setTiposAnimais(lista);
-			animalViewModel.setAction(ConstantesOperacoes.Delete);
+			animalViewModel.setAction(ConstantesOperacoes.getDelete());
 			request.setAttribute("animalViewModel", animalViewModel);
 			requestDispatcher.forward(request, response);
 		} catch (Exception e) {

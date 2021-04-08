@@ -29,7 +29,8 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 			<div id="container-id" class="form-group">
 				<label class="col-sm-2 control-label">Id</label>
 				<div class="col-sm-10">
-					<input type="text" name="id" class="form-control input-style" id="idAnimal" placeholder="Id" value="<%=animal.getId()%>">
+					<input type="text" name="id" class="form-control input-style"
+						id="idAnimal" placeholder="Id" value="<%=animal.getId()%>">
 				</div>
 			</div>
 			<div class="form-group">
@@ -78,13 +79,17 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 					(Separados por ;)</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control input-style"
-						id="alimentacoes" placeholder="Alimentacoes" name="alimentacoes"> <br>
-			<input type="submit" value="Cadastrar" id="btnSumit" class="form-control input-style"/> <br>
-					<input href="/ProjetoPIOB/Controller?command=ListarAnimal" type="submit" class="form-control input-style" value="Listar Animais">
+						id="alimentacoes" placeholder="Alimentacoes" name="alimentacoes">
+					<br> <input type="submit" value="Cadastrar" id="btnSumit"
+						class="form-control input-style" /> <br> <input
+						href="/ProjetoPIOB/Controller?command=ListarAnimal" type="submit"
+						class="form-control input-style" value="Listar Animais"> <br>
+						
 				</div>
 			</div>
 		</form>
 		<br>
+		<a href="/ProjetoPIOB/Controller?command=PostLogout" >Logout</a>
 	</div>
 
 	<script
@@ -105,9 +110,9 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 	<script type="text/javascript">
 		var action = "<%=animal.getAction()%>";
 		var constAction = {
-				Create: '<%=ConstantesOperacoes.Criacao%>',
-				Update: '<%=ConstantesOperacoes.Alteracao%>',
-				Delete: '<%=ConstantesOperacoes.Delete%>'
+				Create: '<%=ConstantesOperacoes.getCriacao()%>',
+				Update: '<%=ConstantesOperacoes.getAlteracao()%>',
+				Delete: '<%=ConstantesOperacoes.getDelete()%>'
 		};
 	</script>
 	<script type="text/javascript"

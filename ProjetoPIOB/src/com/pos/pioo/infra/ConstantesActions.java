@@ -40,4 +40,8 @@ public class ConstantesActions {
 	public static String getCommandPostLogout() {
 		return "PostLogout";
 	}
+	
+	public static String getCommandMenu() {
+		return "Menu";
+	}
 }

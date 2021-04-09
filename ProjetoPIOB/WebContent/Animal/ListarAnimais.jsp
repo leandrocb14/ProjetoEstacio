@@ -40,9 +40,9 @@ ListarAnimalViewModel viewModel = (ListarAnimalViewModel) request.getAttribute("
 			<th><%=viewModel.getAnimais().get(i).getSubTipo()%></th>
 			<th><%=viewModel.getAnimais().get(i).getTamanho()%></th>
 			<th><a
-				href="/ProjetoPIOB/Controller?command=AlterarAnimal&id=<%=viewModel.getAnimais().get(i).getId()%>" class="a-table">Alterar</a></th>
+				href="/ProjetoPIOB/Controller?command=AlterarAnimal&id=<%=viewModel.getAnimais().get(i).getId()%>">Alterar</a></th>
 			<th><a
-				href="/ProjetoPIOB/Controller?command=DeletarAnimal&id=<%=viewModel.getAnimais().get(i).getId()%>" class="a-table">Deletar</a></th>
+				href="/ProjetoPIOB/Controller?command=DeletarAnimal&id=<%=viewModel.getAnimais().get(i).getId()%>">Deletar</a></th>
 		</tr>
 		<%
 		}

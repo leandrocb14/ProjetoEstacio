@@ -1,0 +1,25 @@
+package com.pos.pioo.web.command.navigation;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.pos.pioo.web.command.ICommand;
+
+public class Menu implements ICommand {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		try {
+			var requestDispatcher = request.getRequestDispatcher("/Menu/Index.jsp");
+			requestDispatcher.forward(request, response);
+		} catch (ServletException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -27,7 +27,7 @@ public class PostLogin implements ICommand {
 			Usuario usuario = boUsuario.ObterUsuario(model);
 			if (usuario != null) {
 				request.getSession().setAttribute(ConstantesSession.getUsuarioLogado(), usuario);
-				response.sendRedirect("/ProjetoPIOB/Controller?command=ListarAnimal");
+				response.sendRedirect("/ProjetoPIOB/Controller?command=Menu");
 			} else {
 				response.sendRedirect("/ProjetoPIOB/Controller?command=Login");
 			}

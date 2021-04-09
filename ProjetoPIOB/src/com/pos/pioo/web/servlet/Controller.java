@@ -32,7 +32,7 @@ public class Controller extends HttpServlet {
 			var commandFiltrado = TratarFiltroCommand(stringCommand, usuarioEstaLogado);
 			if (!stringCommand.equals(commandFiltrado)) {
 				if (usuarioEstaLogado)
-					response.sendRedirect("/ProjetoPIOB/Controller?command=ListarAnimal");
+					response.sendRedirect("/ProjetoPIOB/Controller?command=Menu");
 				else
 					response.sendRedirect("/ProjetoPIOB/Controller?command=Login");
 
@@ -66,7 +66,7 @@ public class Controller extends HttpServlet {
 		if (!isAnonymous && !usuarioAutenticado)
 			return ConstantesActions.getCommandLogin();
 		else if (isAnonymous && usuarioAutenticado)
-			return ConstantesActions.getCommandListarAnimal();
+			return ConstantesActions.getCommandMenu();
 
 		return pCommand;
 	}

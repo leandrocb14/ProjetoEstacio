@@ -62,7 +62,7 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 				<label class="col-sm-2 control-label">Nome Comum</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control input-style" id="subTipo"
-						placeholder="Cachorro" name="subTipo"
+						placeholder="Digite o nome do animal..." name="subTipo"
 						value="<%=animal.getSubTipo() != null && !animal.getSubTipo().isEmpty() ? animal.getSubTipo() : ""%>">
 				</div>
 			</div>
@@ -70,26 +70,18 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 				<label class="col-sm-2 control-label">Tamanho</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control input-style" id="tamanho"
-						placeholder="Tamanho" name="tamanho"
+						placeholder="Digite o tamanho..." name="tamanho"
 						value="<%=animal.getTamanho()%>">
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-3 control-label">Alimentacoes
-					(Separados por ;)</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control input-style"
-						id="alimentacoes" placeholder="Alimentacoes" name="alimentacoes">
 					<br> <input type="submit" value="Cadastrar" id="btnSumit"
-						class="form-control input-style" /> <br> <input
-						href="/ProjetoPIOB/Controller?command=ListarAnimal" type="submit"
-						class="form-control input-style" value="Listar Animais"> <br>
+						class="form-control input-style" /> <br>
 						
 				</div>
 			</div>
 		</form>
-		<br>
-		<a href="/ProjetoPIOB/Controller?command=PostLogout" >Logout</a>
 	</div>
 
 	<script

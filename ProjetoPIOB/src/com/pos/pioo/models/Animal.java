@@ -9,11 +9,6 @@ public class Animal {
 	private int tipo;
 	private String subTipo;
 	private TipoAnimal tipoAnimal;
-	private List<Alimentacao> alimentacoes;
-	
-	public Animal() {
-		alimentacoes = new ArrayList<Alimentacao>();
-	}
 	
 	public int getId() {
 		return id;
@@ -44,12 +39,6 @@ public class Animal {
 	}
 	public void setTamanho(double tamanho) {
 		this.tamanho = tamanho;
-	}
-	public List<Alimentacao> getAlimentacoes() {
-		return alimentacoes;
-	}
-	public void setAlimentacao(Alimentacao alimentacao) {
-		this.alimentacoes.add(alimentacao);
 	}
 
 	public TipoAnimal getTipoAnimal() {

@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.pos.pioo.bll.BoAnimal;
-import com.pos.pioo.web.command.Command;
+import com.pos.pioo.web.command.ICommand;
 
-public class PostDeletarAnimal implements Command {
+public class PostDeletarAnimal implements ICommand {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {

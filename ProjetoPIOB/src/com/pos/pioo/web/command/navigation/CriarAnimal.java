@@ -5,10 +5,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.pos.pioo.bll.BoTipoAnimal;
 import com.pos.pioo.infra.ConstantesOperacoes;
-import com.pos.pioo.web.command.Command;
+import com.pos.pioo.web.command.ICommand;
 import com.pos.pioo.web.viewmodels.AnimalViewModel;
 
-public class CriarAnimal implements Command {
+public class CriarAnimal implements ICommand {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {

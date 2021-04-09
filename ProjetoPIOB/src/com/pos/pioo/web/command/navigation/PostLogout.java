@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.pos.pioo.infra.ConstantesSession;
-import com.pos.pioo.web.command.Command;
+import com.pos.pioo.web.command.ICommand;
 
-public class PostLogout implements Command {
+public class PostLogout implements ICommand {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {

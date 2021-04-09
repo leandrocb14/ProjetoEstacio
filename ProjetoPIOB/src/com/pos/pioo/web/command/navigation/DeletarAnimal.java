@@ -9,10 +9,10 @@ import com.pos.pioo.dispatcher.DispatcherAnimal;
 import com.pos.pioo.dispatcher.IDispatcherAnimal;
 import com.pos.pioo.infra.ConstantesOperacoes;
 import com.pos.pioo.web.adapter.AnimalAdapter;
-import com.pos.pioo.web.command.Command;
+import com.pos.pioo.web.command.ICommand;
 import com.pos.pioo.web.viewmodels.AnimalViewModel;
 
-public class DeletarAnimal implements Command {
+public class DeletarAnimal implements ICommand {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {

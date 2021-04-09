@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.pos.pioo.bll.BoAnimal;
 import com.pos.pioo.web.adapter.AnimalAdapter;
-import com.pos.pioo.web.command.Command;
+import com.pos.pioo.web.command.ICommand;
 import com.pos.pioo.web.viewmodels.ListarAnimalViewModel;
 
-public class ListarAnimal implements Command {
+public class ListarAnimal implements ICommand {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {

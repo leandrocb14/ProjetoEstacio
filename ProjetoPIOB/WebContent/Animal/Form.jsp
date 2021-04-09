@@ -117,6 +117,8 @@ AnimalViewModel animal = (AnimalViewModel) request.getAttribute("animalViewModel
 	</script>
 	<script type="text/javascript"
 		src="ScriptsGenerics/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript"
+		src="ScriptsGenerics/jquery.mask.js"></script>
 	<script type="text/javascript" src="Animal/Form.js"></script>
 </body>
 

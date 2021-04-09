@@ -9,6 +9,7 @@ function CarregaEventos() {
 		CarregaEventosUpdate();
 	else if (action == constAction.Delete)
 		CarregaEventosDelete();
+	$('#tamanho').mask('99.99', { reverse: true });
 }
 
 function CarregaEventosCreate() {
@@ -16,6 +17,7 @@ function CarregaEventosCreate() {
 	$('#btnSumit').attr('value', 'Cadastrar')
 	$('#titulo-page').text('CADASTRAR ANIMAL');
 	$('#formAnimal').attr('action', '/ProjetoPIOB/Controller?command=PostCriarAnimal');
+	$('#tamanho').val('');
 }
 
 function CarregaEventosUpdate() {
